@@ -45,12 +45,17 @@
         </div>
         <div>
           <label for="color">Цвет</label>
-          <input class="customer-choice" name="color" type="color" value="#000000" />
+          <input
+            class="customer-choice"
+            name="color"
+            type="color"
+            value="#000000"
+          />
         </div>
         <div>
           <label for="quantity">Количество</label>
           <input
-          class="customer-choice"
+            class="customer-choice"
             name="quantity"
             type="number"
             min="1"
@@ -60,22 +65,29 @@
         </div>
         <div>
           <label for="datetime">Дата/время</label>
-          <input class="customer-choice" name="datetime" type="datetime-local" required />
+          <input
+            class="customer-choice"
+            name="datetime"
+            type="datetime-local"
+            required
+          />
         </div>
       </div>
-      <fieldset class="full-width">
+      <fieldset class="var-choice-block">
         <legend>Способ доставки</legend>
-        <label>
-          <input type="radio" name="deliveryMethod" value="self" required />
-          Самовывоз
-        </label>
-        <label>
-          <input type="radio" name="deliveryMethod" value="courier" /> Курьером
-        </label>
+        <div class="var-choice">
+            <label> Курьером </label>
+          <label> Самовывоз </label>
+          
+        </div>
+        <div class="var-choice in">
+            <input type="checkbox" name="deliveryMethod" value="self" required />
+          <input type="checkbox" name="deliveryMethod" value="courier" />
+        </div>
       </fieldset>
       <div class="full-width">
         <label for="pickup">Ближайший пункт самовывоза</label>
-        <select class="select-destination"  name="pickupPoint">
+        <select id="select-destination" name="pickupPoint">
           <option value="point1">Пункт 1</option>
           <option value="point2">Пункт 2</option>
           <option value="point3">Пункт 3</option>
