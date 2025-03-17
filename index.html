@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Заказ товара</title>
+  </head>
+  <body>
+    <form class="order-form" action="/submit-order" method="post">
+      <h2 class="full-width">Заказ товара</h2>
+      <div class="order-grid">
+        <div>
+          <label for="product-name">Название</label>
+          <input
+            class="customer-choice"
+            name="productName"
+            type="text"
+            placeholder="123-ABC/abc"
+            pattern="\d{3}-[A-Za-z]{3}/[a-z]{3}"
+            title="Введите формат: 3 цифры, дефис, 3 заглавные латинские буквы, слэш, 3 строчные латинские буквы"
+            required
+          />
+        </div>
+        <div>
+          <label for="customer-choice">Имя</label>
+          <input
+            class="customer-choice"
+            name="customerName"
+            type="text"
+            placeholder="Ваше имя"
+            autocomplete="name"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input
+            class="customer-choice"
+            name="email"
+            type="email"
+            placeholder="someEXISTING@gmail.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="color">Цвет</label>
+          <input class="customer-choice" name="color" type="color" value="#000000" />
+        </div>
+        <div>
+          <label for="quantity">Количество</label>
+          <input
+          class="customer-choice"
+            name="quantity"
+            type="number"
+            min="1"
+            value="1"
+            required
+          />
+        </div>
+        <div>
+          <label for="datetime">Дата/время</label>
+          <input class="customer-choice" name="datetime" type="datetime-local" required />
+        </div>
+      </div>
+      <fieldset class="full-width">
+        <legend>Способ доставки</legend>
+        <label>
+          <input type="radio" name="deliveryMethod" value="self" required />
+          Самовывоз
+        </label>
+        <label>
+          <input type="radio" name="deliveryMethod" value="courier" /> Курьером
+        </label>
+      </fieldset>
+      <div class="full-width">
+        <label for="pickup">Ближайший пункт самовывоза</label>
+        <select class="select-destination"  name="pickupPoint">
+          <option value="point1">Пункт 1</option>
+          <option value="point2">Пункт 2</option>
+          <option value="point3">Пункт 3</option>
+          <option value="point4">Пункт 4</option>
+        </select>
+      </div>
+      <fieldset class="packaging-options">
+        <legend>Вид упаковки</legend>
+        <label>
+          <input type="radio" name="packaging" value="box" required />
+          <img src="img/box.jpg" alt="Упаковка в коробке" />
+          Коробка
+        </label>
+        <label>
+          <input type="radio" name="packaging" value="bag" />
+          <img src="img/bag.jpg" alt="Упаковка в пакете" />
+          Пакет
+        </label>
+        <label>
+          <input type="radio" name="packaging" value="wrap" />
+          <img src="img/wrap.jpg" alt="Упаковка в обертке" />
+          Обёртка
+        </label>
+      </fieldset>
+      <button type="submit" class="submitButton">Заказать</button>
+    </form>
+  </body>
+</html>
