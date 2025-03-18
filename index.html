@@ -46,7 +46,7 @@
         <div>
           <label for="color">Цвет</label>
           <input
-            class="customer-choice"
+            class="color-select"
             name="color"
             type="color"
             value="#000000"
@@ -73,41 +73,76 @@
           />
         </div>
       </div>
-      <fieldset class="var-choice-block">
-        <legend>Способ доставки</legend>
-        <div class="var-choice">
+      <div class="delivery">
+        <fieldset class="var-choice-block">
+          <legend>Способ доставки</legend>
+          <div class="var-choice">
             <label> Курьером </label>
-          <label> Самовывоз </label>
-          
+            <label> Самовывоз </label>
+          </div>
+          <div class="var-choice in">
+            <label class="checkbox-container">
+              <input
+                class="custom-checkbox"
+                type="checkbox"
+                name="deliveryMethod"
+                value="self"
+              />
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkbox-container">
+              <input
+                class="custom-checkbox"
+                type="checkbox"
+                name="deliveryMethod"
+                value="courier"
+              />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="del-dest">
+          <label for="pickup">Ближайший пункт самовывоза</label>
+          <select class="select-destination" name="pickupPoint">
+            <option value="point1">Пункт 1</option>
+            <option value="point2">Пункт 2</option>
+            <option value="point3">Пункт 3</option>
+            <option value="point4">Пункт 4</option>
+          </select>
         </div>
-        <div class="var-choice in">
-            <input type="checkbox" name="deliveryMethod" value="self" required />
-          <input type="checkbox" name="deliveryMethod" value="courier" />
-        </div>
-      </fieldset>
-      <div class="full-width">
-        <label for="pickup">Ближайший пункт самовывоза</label>
-        <select id="select-destination" name="pickupPoint">
-          <option value="point1">Пункт 1</option>
-          <option value="point2">Пункт 2</option>
-          <option value="point3">Пункт 3</option>
-          <option value="point4">Пункт 4</option>
-        </select>
       </div>
       <fieldset class="packaging-options">
         <legend>Вид упаковки</legend>
         <label>
-          <input type="radio" name="packaging" value="box" required />
+          <input
+            type="radio"
+            class="radio-button"
+            name="packaging"
+            value="box"
+            required
+          />
           <img src="img/box.jpg" alt="Упаковка в коробке" />
           Коробка
         </label>
         <label>
-          <input type="radio" name="packaging" value="bag" />
+          <input
+            type="radio"
+            class="radio-button"
+            name="packaging"
+            value="bag"
+          />
           <img src="img/bag.jpg" alt="Упаковка в пакете" />
           Пакет
         </label>
         <label>
-          <input type="radio" name="packaging" value="wrap" />
+          <input
+            type="radio"
+            class="radio-button"
+            name="packaging"
+            value="wrap"
+          />
           <img src="img/wrap.jpg" alt="Упаковка в обертке" />
           Обёртка
         </label>
